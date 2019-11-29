@@ -10,9 +10,16 @@ const User = ({users}) => (
      <Head>
       <title>Usuários</title>
     </Head>
-    {users.map(user => (
-      <li key={user.login}>{user.login}</li>
-    ))}
+    <ul>
+      {users.map(user => (
+        <li key={user.login}>
+          {user.login}
+          <Link href={`/users/${user.login}`}>
+            <a>Acessar perfil</a>
+          </Link>
+        </li>
+      ))} 
+    </ul>
     <Link href="/">
       <a>Voltar</a>
     </Link>
